@@ -1,0 +1,6 @@
+select r.race_desc, s.sex_desc, total(esasro.census2010pop) as "Popalation"
+from pop_estimate_state_age_sex_race_origin as esasro, race as r, sex as s
+where esasro.sex = s.sex_cd and esasro.race = r.race_cd and esasro.sex != 0
+group by s.sex_desc, r.race_desc
+order by population desc
+

@@ -1,0 +1,5 @@
+select D.division_desc as "Division Name", count(distinct husl.state) as "Count"
+from housing_units_state_level as husl, division as D
+where husl.division = D.division_cd
+group by D.division_desc
+
